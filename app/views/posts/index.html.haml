@@ -1,0 +1,19 @@
+%br
+.row
+  .col-md-1
+  .col-md-5
+    - @posts.each do |post|
+      -# cache post do
+      = render post
+      %br
+  .col-md-2.tags_n_search
+    = render 'search'
+    %br
+    = render 'posts/tags'
+  .col-md-4
+
+.row
+  .col-md-1
+  .col-md-5
+    = paginate @posts, :theme => 'twitter-bootstrap-3',
+                   :pagination_class => 'pagination-sm'

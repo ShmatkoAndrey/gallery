@@ -1,0 +1,53 @@
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  //margin: 0;
+  margin-right: 15px;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  li {
+    background-color: #FFF;
+    border-top: solid 1px #DDD;
+    margin: 0;
+    padding: 5px;
+    a {
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+  }
+}
+.ui-menu-item.ui-state-focus
+{
+  background-color: #afff92;
+}
+.ui-helper-hidden-accessible {
+  display:none !important;
+}
+
+.post_search
+{
+  display: inline-block;
+  width: 100%;
+}
+
+.input-group-btn
+{
+  position: absolute;
+  display: inline-block;
+  width: 43px;
+  right: 0;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.search_group {
+  display: block;
+}
+
+#q_topik_cont {
+  border-radius: 4px;
+}

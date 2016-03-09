@@ -1,0 +1,65 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+  = render 'layouts/error_messages', object: f.object
+
+  %br/
+
+  .row
+    .col-md-4
+    .col-md-4
+
+      %h2
+        #{t 'user_.edit_update'} #{current_user.username.to_s.humanize}
+
+      .form-group
+      = f.label :username
+      %br/
+      = f.text_field :username, autofocus: true, class: "form-control"
+
+      .form-group
+        = f.label :name
+        %br/
+        = f.text_field :name, class: "form-control"
+
+      .form-group
+        = f.label :email
+        %br/
+        = f.email_field :email, class: "form-control"
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+
+      .form-group
+        = f.label :password
+        %i (leave blank if you don't want to change it)
+        %br/
+        = f.password_field :password, autocomplete: "off", class: "form-control"
+
+      .form-group
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+
+      .form-group
+        = f.label :current_password
+        %i (we need your current password to confirm your changes)
+        %br/
+        = f.password_field :current_password, autocomplete: "off", class: "form-control"
+
+        .form-group
+          = avatar_thumb resource
+          = f.file_field :avatar
+
+      .form-group
+        = f.submit "#{t 'user_.edit_update'}", class: "btn btn-default "
+
+      - resource_class.omniauth_providers.each do |provider|
+        = bounds_acc(provider)
+        %br
+%br
+  %br
+.row
+  .col-md-4
+  .col-md-4
+    %p
+      = button_to "#{t 'user_.cancel_acc'}", registration_path(:user),
+               data: { confirm: "#{t 'confirm'}" }, method: :delete, class: "btn btn-default "

@@ -1,0 +1,42 @@
+.row
+  .col-md-1
+  .col-md-10
+    .panel.panel-default
+
+      %table.table
+
+        %tr
+          %th
+            \#
+          %th
+            Username
+          %th
+            Event
+          %th
+            Content
+          %th
+            Time
+
+        - @events.each do |ev|
+          %tr
+            %td
+              =ev.id
+            %td
+              = ev.user.username
+            %td
+              = event ev.name
+            %td.colum_width
+              .clip
+                = truncate(ev.eventable_content, length: 60, separator: ' ', omission: ' ...')
+                -#- if check_post(ev.eventable_id) # Post.exists? 3
+                -#  = link_to ev.eventable_content, post_path(ev.eventable_id)
+                -#- else
+                -#  = "##{ev.eventable_content}"
+            %td
+              = ev.created_at
+
+.row
+  .col-md-3
+  .col-md-9
+    = paginate @events, :theme => 'twitter-bootstrap-3',
+                   :pagination_class => 'pagination-sm'

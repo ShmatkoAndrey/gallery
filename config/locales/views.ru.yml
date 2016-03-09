@@ -1,0 +1,56 @@
+ru:
+  header:
+    create_post: Новый пост
+    edit_profie: Редактировать профиль
+
+    log_in: Войти
+    log_out: Выйти
+
+    hello:
+      hello_user: Привет,
+      hello_guest: Привет, Гость
+
+    event_list: Список событий (тест)
+
+  user_:
+    signup: Регистрация
+    login: Логин
+    remember_me: Запомнить меня
+    forgot_pass: Забыли пароль?
+    send: Отправить
+    continue: Продолжить
+    resive_confirm: Не получили письмо с подтверждением?
+    unlock_confirm: Не получили мнструкции по разблокировке?
+    sign_in_else: Войти через
+
+    edit_update: Обновить
+    cancel_acc: Удалить аккаунт
+    bound: Присоеденить к аккаунту
+    unbound: Удалить связь с аккаунтом
+
+    finish: Пожалуйста подтвердите email перейдя по ссылке в присланном письме
+
+  content:
+    destroy: Удалить
+    tags_add: Теги (введите через запятую)
+    create_post: Создать пост!
+    cancel: Отмена
+
+    commented_ago: Комментирий отправлен
+    posted_ago: Пост создан
+    ago: назад
+    tags: Теги
+    search_tags: Искать по тегам...
+
+    upload_from: Загружено с
+
+    leng: Язык
+
+  event:
+    post_create: Создание поста
+    post_destroy: Удаление поста
+    post_upload: Загрузил картинок
+    comment_create: Создал коммент
+    comment_destroy: Удалил коммент
+
+  confirm: Вы уверены?

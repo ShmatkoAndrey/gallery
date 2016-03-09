@@ -1,0 +1,41 @@
+.row
+  .col-md-1
+  .col-md-8
+    .panel.panel-warning
+
+      .panel-heading
+        %b
+          .clip
+            = @post.topik
+      .panel-body
+        .clip
+          = raw @post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
+        %hr
+        %p
+          .content
+            .clip
+              = render 'posts/content_show'
+      .panel-footer
+        .row
+
+          .pull-left.ava
+            = avatar_small_thumb @post.user
+            = @post.user.username
+
+          .pull-right.time
+            #{t 'content.posted_ago'}
+            = time_ago_in_words(@post.created_at)
+            #{t 'content.ago'}
+
+            - if !current_user.nil? && current_user.id == @post.user_id
+              = link_to "#{t 'content.destroy'}", @post, method: :delete,
+                                        data: { confirm: "#{t 'confirm'}" }
+
+      .col-md-2
+      .col-md-8
+        #post_comment
+          - if user_signed_in?
+            = render 'comments/new'
+        %br
+          .comment
+            = render 'comments/index', post_id: @post.id

@@ -1,0 +1,56 @@
+en:
+  header:
+    create_post: Create post
+    edit_profie: Edit profile
+
+    log_in: LogIn
+    log_out: LogOut
+
+    hello:
+      hello_user: Hello,
+      hello_guest: Hello, Guest
+
+    event_list: Event list (test)
+
+  user_:
+    signup: SignUp
+    login: Login
+    remember_me: Remember me
+    forgot_pass: Forgot your password?
+    send: Send
+    continue: Continue
+    resive_confirm: Didn't receive confirmation instructions?
+    unlock_confirm: Didn't receive unlock instructions?
+    sign_in_else: Sign in with
+
+    edit_update: Update
+    cancel_acc: Cancel my account
+    bound: Bound
+    unbound: Unbound
+
+    finish: Please, confirm your email
+
+  content:
+    destroy: Delete
+    tags_add: "Tags (separated by commas)"
+    create_post: Create post!
+    cancel: Cancel
+
+    commented_ago: Commented
+    posted_ago: Posted
+    ago: ago
+    tags: Tags
+    search_tags: Search for tags...
+
+    upload_from: Upload from
+
+    leng: Language
+
+  event:
+    post_create: Create post
+    post_destroy: Destroy post
+    post_upload: Upload images
+    comment_create: Create comment
+    comment_destroy: Destroy comment
+
+  confirm: Are you sure?

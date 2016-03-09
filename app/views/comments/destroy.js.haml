@@ -1,0 +1,2 @@
+$('.comment').html("#{escape_javascript(render('comments/index', post_id: @post_id))}")
+$('.new_comment_errors').html("#{@error_message}")

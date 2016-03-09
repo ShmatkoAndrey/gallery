@@ -1,0 +1,37 @@
+.index_view_imgs img {
+  width: 100%;
+}
+
+.index_view_imgs {
+
+}
+
+.index_view_txt{
+  margin: 0 5px;
+}
+
+.post_img_border{
+  border: 1px solid #aaaaaa;
+  min-width: 50px;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.img_index {
+  min-width: 50px;
+  max-width: 600px;
+  min-height: 50px;
+  max-height: 250px;
+  overflow: hidden;
+  margin: 4px;
+}
+
+.modal-dialog {
+  width: -moz-min-content;
+  width: -webkit-min-content;
+  width: min-content;
+}
+
+.tags_n_search{
+  display: block;
+}

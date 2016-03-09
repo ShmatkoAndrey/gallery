@@ -1,0 +1,19 @@
+ru:
+  activerecord:
+    attributes:
+
+      user:
+        name: Имя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        current_password: Текущий пароль
+        avatar: Аватар
+        username: Ник
+
+      post:
+        content: Содержание
+        topik: Заголовок
+
+      comment:
+        content: Комментарий
+

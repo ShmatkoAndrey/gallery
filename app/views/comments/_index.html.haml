@@ -1,0 +1,10 @@
+%ul
+  - @comments.each do |comment|
+    %li
+      -# cache comment do
+      = render comment, page: params[:page]
+
+.row
+  = paginate @comments, :theme => 'twitter-bootstrap-3',
+                   :pagination_class => 'pagination-sm',
+                   :params => { :controller => 'posts', :action => 'show', id: post_id}

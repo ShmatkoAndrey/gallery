@@ -1,0 +1,21 @@
+.post
+  .post_head
+    .clip
+      = link_to post.topik, post_path(post.id)
+      = link_to comments_count(post), "#{post_path(post)}#post_comment", class: "talkbubble"
+  .post_info
+    .row
+      .post_info_user
+        = avatar_small_thumb post.user
+        = post.user.username
+      = " | "
+      .post_info_posted
+        #{t 'content.posted_ago'}
+        = time_ago_in_words(post.created_at)
+        #{t 'content.ago'}
+  .post_body
+    = render 'posts/content_index', post: post
+
+  .post_tags.clip
+    #{t 'content.tags'}:
+    = raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')

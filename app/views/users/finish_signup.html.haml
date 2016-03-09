@@ -1,0 +1,44 @@
+#add-email.container
+  %h1 Finish sign up
+  = form_for(current_user, :as => 'user', :url => finish_signup_path(current_user), :html => { role: 'form'}) do |f|
+    = render 'layouts/error_messages', object: @user
+    %br/
+
+    - if !current_user.unconfirmed_email.nil?
+      .alert.alert-warning
+        #{t 'user_.finish'}
+      .form-group
+        = f.label :email, value: "Change email"
+        .controls
+          = f.text_field :email, :autofocus => true, :value => '', class: 'form-control', placeholder: 'Example: email@me.com'
+
+      .actions
+      = f.submit "#{t 'user_.continue'}", :class => 'btn btn-primary'
+
+    -else
+      .form-group
+        = f.label :username
+        %br/
+        = f.text_field :username, autofocus: true, class: "form-control"
+      .form-group
+        = f.label :email
+        .controls
+          = f.text_field :email, :autofocus => true, :value => '', class: 'form-control', placeholder: 'Example: email@me.com'
+      .form-group
+        = f.label :password
+        %em
+          (6 characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "off", class: "form-control"
+
+      .form-group
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+
+      .form-group
+      = avatar_thumb resource
+      = f.file_field :avatar
+      %br/
+      .actions
+        = f.submit "#{t 'user_.continue'}", :class => 'btn btn-primary'

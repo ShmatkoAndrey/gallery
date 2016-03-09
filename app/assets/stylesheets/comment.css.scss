@@ -1,0 +1,31 @@
+.comment
+{
+  padding: 0;
+  margin: 0;
+}
+.comment ul
+{
+  list-style: none;
+}
+.new_comment_errors
+{
+  color: #B00100;
+}
+
+.comment_pics {
+  display: inline-block;
+  max-height: 150px;
+  max-width: 150px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.comment_pics img {
+  max-width: 150px;
+  max-height: 150px;
+
+}
+
+#files_comment {
+  display: inline-block;
+}

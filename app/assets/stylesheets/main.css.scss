@@ -1,0 +1,28 @@
+$error_red: #f00;
+
+#error_explanation {
+  color: $error_red;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    border-color: $error_red;
+  }
+  .form-control:focus {
+    border-color: $error_red;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 6px $error_red;
+  }
+}
+
+.clip
+{
+  word-wrap: break-word;
+}
+
+a:hover, a:focus {
+  outline: none;
+}

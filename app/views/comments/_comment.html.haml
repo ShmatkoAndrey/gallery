@@ -1,0 +1,25 @@
+.panel.panel-info{id: comment.id}
+  .panel-heading
+    = avatar_small_thumb comment.user
+    = comment.user.username
+    .pull-right
+      - if !current_user.nil? && current_user.id == comment.user.id
+        = link_to "#{t 'content.destroy'}", comment_path(id: comment.id, page: params[:page]), method: :delete, remote: true,
+                                      data: {confirm: "#{t 'confirm'}" }
+  .panel-body
+    .clip
+      = comment.content.inspect.gsub('\r\n', '<p>').gsub('" ', '').gsub(' "', '').gsub('"', '').gsub('"', '').html_safe
+    - img_file = split_comment_images(comment)
+    - img_file[0].each do |file|
+      .comment_pics
+        = image_tag file
+    - img_file[1].each do |file|
+      %br
+      = link_to file.file_identifier, file.file.url
+
+  .panel-footer
+    .row
+      .pull-right.time
+        #{t 'content.commented_ago'}
+        = time_ago_in_words(comment.created_at)
+        #{t 'content.ago'}

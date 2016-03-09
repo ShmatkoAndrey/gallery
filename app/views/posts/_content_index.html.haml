@@ -1,0 +1,43 @@
+- str = ""
+- arr = post.content.split(' ')
+- arr_img = []
+
+- if arr[0]
+  - if arr[0].split('site:')[1]
+    - site_url = arr[0].split('site:')[1].split('++')[0]
+    - arr[0] = ""
+  - else
+    - site_url = ''
+
+- arr.each do |w|
+  - begin
+    - open(w, 'rb') do |fh|
+      - if !ImageSize.new(fh).size.nil?
+        - arr_img[arr_img.length] = w
+      - else
+        - str += link_to(w, w) + " "
+  - rescue
+
+  - if w[0..10] == 'data:image/'
+    - arr_img[arr_img.length] = w
+  - if image_tag(w).inspect.split('src=\"')[1].split('\" />"')[0].nil? || !image_tag(w).inspect.split('src=\"/images/')[1].nil?
+    -  str+=w + " "
+
+%center
+  .index_view_imgs
+    - if  arr_img.length >= 1
+      .post_img_border
+        .img_index
+          = image_tag arr_img[0], 'data-toggle' => "modal", 'data-target' => "#myModal"
+- unless site_url.blank?
+  %br
+    #{t 'content.upload_from'}
+    = link_to truncate(site_url, length: 60, separator: ' ', omission: ''){'...'}, site_url
+
+.index_view_txt.clip
+  = truncate(str.html_safe, length: 250, separator: ' ', omission: '') { link_to  ' ...more',  post_path(post.id) }
+
+#myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-body

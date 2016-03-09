@@ -1,0 +1,12 @@
+.row
+  .col-md-4
+  .col-md-4
+    %br
+    - if object.errors.any?
+      #error_explanation
+        .alert.alert-danger
+          The form contains #{pluralize(object.errors.count, "error")}.
+        %ul
+          - object.errors.full_messages.each do |msg|
+            %li
+              * #{msg}

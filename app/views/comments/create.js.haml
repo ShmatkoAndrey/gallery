@@ -1,0 +1,9 @@
+- !if @error_message.blank?
+  $('.comment').html("#{escape_javascript(render('comments/index', post_id: @post_id))}")
+  $('#comment_content').val('')
+  $('#comment_files').val('')
+  $('#comment_id').val('')
+  $('#files_comment').html('')
+
+
+$('.new_comment_errors').html("#{@error_message}")

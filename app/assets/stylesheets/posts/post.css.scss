@@ -1,0 +1,78 @@
+.bootstrap-tagsinput {
+  width: 100%;
+}
+
+.post {
+  display: block;
+  border: 1px solid #cccccc;
+}
+
+.post_head {
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.post_info {
+  .post_info_posted {
+    color:#666666;
+    display:inline-block;
+    //float: right;
+    margin-right: 15px;
+  }
+
+  .post_info_user {
+    display:inline-block;
+    margin-left: 15px;
+  }
+}
+
+.post_body {
+  padding: 10px;
+  padding-top: 15px;
+
+  border-bottom: 1px solid #cccccc;;
+}
+
+.post_tags {
+padding: 10px;
+}
+
+.post_img {
+  width: 100%;
+}
+
+.talkbubble {
+  float: right;
+  margin-right: 25px;
+  top: -10px;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 6px;
+
+  width: 70px;
+  height: 40px;
+  background: #E5E1E0;
+  position: relative;
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+a.talkbubble:hover, a.talkbubble:focus {
+  text-decoration: none;
+}
+
+.talkbubble:before {
+  content:"";
+  position: absolute;
+  right: 100%;
+  top: 22px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-right: 16px solid #E5E1E0;
+  border-bottom: 2px solid transparent;
+}
